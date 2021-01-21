@@ -1,4 +1,4 @@
-#define HEPNOS_FOREACH_NOVA_CLASS
+#define HEPNOS_FOREACH_NOVA_CLASS \
   X(rec_energy_nue) \
   X(rec_energy_nue_lid) \
   X(rec_energy_numu) \
