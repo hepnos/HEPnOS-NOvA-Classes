@@ -10,7 +10,9 @@
 #include <string>
 #include <vector>
 #include <cstdint>
+#ifdef HEPNOS_ENABLE_HDF5
 #include <hdf5.h>
+#endif
 
 namespace hep {
 
@@ -105,6 +107,7 @@ struct rec_sel_lem {
         ar & subevt;
         
     }
+#ifdef HEPNOS_ENABLE_HDF5
 
     /**
      * Extract objects of this type from an HDF5 file
@@ -963,6 +966,7 @@ struct rec_sel_lem {
         H5Sclose(dataspace);
         H5Dclose(dataset);
     }
+#endif
 };
 
 }

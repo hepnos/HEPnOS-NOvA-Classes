@@ -10,7 +10,9 @@
 #include <string>
 #include <vector>
 #include <cstdint>
+#ifdef HEPNOS_ENABLE_HDF5
 #include <hdf5.h>
+#endif
 
 namespace hep {
 
@@ -35,6 +37,7 @@ struct spill_intx {
         ar & value;
         
     }
+#ifdef HEPNOS_ENABLE_HDF5
 
     /**
      * Extract objects of this type from an HDF5 file
@@ -193,6 +196,7 @@ struct spill_intx {
         H5Sclose(dataspace);
         H5Dclose(dataset);
     }
+#endif
 };
 
 }

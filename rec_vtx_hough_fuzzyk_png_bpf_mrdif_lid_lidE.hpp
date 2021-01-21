@@ -10,7 +10,9 @@
 #include <string>
 #include <vector>
 #include <cstdint>
+#ifdef HEPNOS_ENABLE_HDF5
 #include <hdf5.h>
+#endif
 
 namespace hep {
 
@@ -51,6 +53,7 @@ struct rec_vtx_hough_fuzzyk_png_bpf_mrdif_lid_lidE {
         ar & subevt;
         
     }
+#ifdef HEPNOS_ENABLE_HDF5
 
     /**
      * Extract objects of this type from an HDF5 file
@@ -369,6 +372,7 @@ struct rec_vtx_hough_fuzzyk_png_bpf_mrdif_lid_lidE {
         H5Sclose(dataspace);
         H5Dclose(dataset);
     }
+#endif
 };
 
 }
